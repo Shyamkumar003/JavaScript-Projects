@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Enter the value</b>
+    <input type="text" id="tempId"><br>
+    Convert to <select name="temp" id="convert" onchange="calculate()">
+        <option value="s">select</option>
+        <option value="f">Farenheit</option>
+        <option value="c">Celcius</option>
+    </select><br>
+    
+    <span id="message"></span>
+
+    <script>
+        function calculate(){
+            const sample = document.getElementById("convert").value
+            const input = document.getElementById("tempId").value
+            if(sample === 'f'){
+                document.getElementById("message").innerText = `${(Number(input) * (9/5)) + 32} farenheit`
+            }
+            else if(sample === 'c'){
+                document.getElementById("message").innerText = `${(Number(input) - 32) * (5/9)} celsius`
+            }
+            // else{
+            //     document.getElementById("message").innerText = Select anyone convertion
+            // }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      nav {
+        color: black;
+        background-color: green;
+        position: relative;
+        padding: 15px;
+      }
+      a{
+        color: rgb(255, 0, 0);
+        text-decoration: none;
+        font-weight: 200;
+        position: relative;
+        left: 70%;
+        bottom: 20px;
+        padding: 10px;
+        font-size: large;
+      }
+
+      h1 {
+        text-align: center;
+        position: relative;
+        top: 27px;
+        /* padding: 30%; */
+      }
+      h2 {
+        color: black;
+        background-color: green;
+        text-align: center;
+        position: relative;
+        top: 300px;
+      }
+      /* p {
+        color: rgb(222, 205, 135);
+        background-color: rgb(20, 160, 220);
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: larger;
+        width: 80%;
+        position: relative;
+        left: 80px;
+        top: 250px;
+      } */
+
+      .ab {
+        text-align: center;
+        background-color: purple;
+        position: relative;
+        top: 200px;
+      }
+    </style>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body >
+    <nav>
+      <h1>Header</h1>
+      <button
+        style="
+          color: red;
+          text-decoration: none;
+          font-weight: 200;
+          position: relative;
+          left: 70%;
+          bottom: 20px;
+          padding: 10px;
+          font-size: large;
+        "
+      >
+        ______
+      </button>
+      <button
+        style="
+          color: red;
+          text-decoration: none;
+          font-weight: 200;
+          position: relative;
+          left: 70%;
+          bottom: 20px;
+          padding: 10px;
+          font-size: large;
+        "
+      >
+        Search
+      </button>
+      <a href="Home">Home</a>
+      <a href="Services">Services</a>
+      <a href="About Us">About Us</a>
+    </nav>
+
+    <!-- <p
+      style="
+        color: blueviolet;
+        background-color: blanchedalmond;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: larger;
+      "
+    >
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque pariatur
+      magnam repudiandae nesciunt at recusandae, eius, praesentium quod, quae
+      itaque dolores nihil. Esse, aut. Repellendus explicabo commodi cupiditate
+      tempora sint?
+    </p>
+
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque pariatur
+      magnam repudiandae nesciunt at recusandae, eius, praesentium quod, quae
+      itaque dolores nihil. Esse, aut. Repellendus explicabo commodi cupiditate
+      tempora sint?
+    </p> -->
+    <div class="ab">
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip01" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationTooltip01"
+            value="Mark"
+            required
+          />
+          <!-- <div class="valid-tooltip">
+            Looks good!
+          </div> -->
+        </div>
+        <br />
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip02" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationTooltip02"
+            value="Otto"
+            required
+          />
+          <!-- <div class="valid-tooltip">
+            Looks good!
+          </div> -->
+        </div>
+        <br />
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltipUsername" class="form-label"
+            >Username</label
+          >
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="validationTooltipUsernamePrepend"
+              >@</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="validationTooltipUsername"
+              aria-describedby="validationTooltipUsernamePrepend"
+              required
+            />
+            <!-- <div class="invalid-tooltip">
+              Please choose a unique and valid username.
+            </div> -->
+          </div>
+        </div>
+        <br />
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip03" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationTooltip03"
+            required
+          />
+          <!-- <div class="invalid-tooltip">
+            Please provide a valid city.
+          </div> -->
+        </div>
+        <br />
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip04" class="form-label">State</label>
+          <select class="form-select" id="validationTooltip04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <!-- <div class="invalid-tooltip">
+            Please select a valid state.
+          </div> -->
+        </div>
+        <br />
+        <div class="col-md-3 position-relative">
+          <label for="validationTooltip05" class="form-label">Zip</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationTooltip05"
+            required
+          />
+          <!-- <div class="invalid-tooltip">
+            Please provide a valid zip.
+          </div> -->
+        </div>
+        <br />
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+
+    <h2>Footer</h2>
+  </body>
+</html>

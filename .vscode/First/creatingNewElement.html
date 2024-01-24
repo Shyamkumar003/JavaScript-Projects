@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <span id="container">This is static paragragh</span>
+    <button onclick="AdddPara()">Click to add Para </button>
+
+    <script>
+        function AdddPara(){
+        //creating element 
+        let newPara = document.createElement("p");
+        newPara.textContent = "This is dynamic paragragh";
+
+        //add Element
+        let spanElemnt = document.getElementById("container");
+        spanElemnt.appendChild(newPara);
+    }
+    </script>
+</body>
+</html>

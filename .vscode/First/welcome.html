@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type ="text" id="firstName" name="firstName"><br>
+    <input type ="text" id="lastName"  name="lastName"><br>
+    <!-- <button class="my-btn">Click me</button> -->
+    <button onclick="welcome()" > Click me </button>
+    <span id="welcome">  </span>
+
+    <script>
+    //   const mybtn = document.getElementsByClassName('my-btn');
+    //   //getelementsbyclassname is array of elements so requires array intialisation
+    //   //better to use querySelectors 
+    //   mybtn[0].addEventListener('click',function(){
+    //     alert('clicked')
+    //     const fname = document.getElementById("firstName").value
+    //     const lName = document.getElementById("lastName").value
+    //     document.getElementById("welcome").innerText =`Welcome ${fname} ${lName}`
+    //   })
+
+      //---------> oclick="welcome()"
+      function welcome(){    
+        const fname = document.getElementById("firstName").value
+        const lName = document.getElementById("lastName").value
+
+        document.getElementById("welcome").innerText =`Welcome
+         ${fname[0].toUpperCase() +fname.slice(1)} 
+         ${lName[0].toUpperCase() + lName.slice(1)}`
+      }
+
+    </script>
+     
+</body>
+</html>

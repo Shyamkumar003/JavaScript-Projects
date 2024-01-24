@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+<body>
+    <span id="name"></span><br>
+    <span id="age"></span><br>
+
+    <button onclick="Prev()"><i class="fas fa-chevron-left"></i></button>
+    <button onclick="Next()"><i class="fas fa-chevron-right"></i></button>
+    
+    <script>
+        const arr=[
+            {name:"shyam", age:23},
+
+            { name:"Karthi", age:23},
+
+            { name:"Gogul",  age:23},
+
+            {name:"Sunil",   age:23},
+            
+            {name:"Roashan", age:23}
+        ];
+      //  let arr =["shyam","john","Aurthur"]
+
+        let currIndex=0;
+
+        function Prev(){
+            currIndex--;
+            if(currIndex<0){
+                currIndex=arr.length-1;}
+                document.getElementById("name").textContent= arr[currIndex].name;
+                document.getElementById("age").textContent= arr[currIndex].age;
+
+            
+        }
+        function Next(){
+            currIndex++;
+            if(currIndex>arr.length-1){
+                currIndex=0;}
+                document.getElementById("name").textContent= arr[currIndex].name;
+                document.getElementById("age").textContent= arr[currIndex].age;       
+        }
+        window.addEventListener('load',function(){
+            document.getElementById("name").textContent= arr[currIndex].name;
+                document.getElementById("age").textContent= arr[currIndex].age;
+        })
+    </script>
+</body>
+</html>
