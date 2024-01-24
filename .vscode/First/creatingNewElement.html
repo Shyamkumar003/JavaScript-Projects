@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <span id="container">This is static paragragh</span>
-    <button onclick="AdddPara()">Click to add Para </button>
+    <button onclick="AdddPara()">Click to add Para</button> 
+    <br>
 
+    <input type="text" id="input" placeholder="Enter the text">
+    <button onclick="orderList()" > Click </button>
+    <ul id="taskList"></ul>
+
+
+    <img  id="img" onmousemove="bigImg()"  
+    src="https://media.newyorker.com/photos/5a95a5b13d9089123c9fdb7e/1:1/w_3289,h_3289,c_limit/Petrusich-Dont-Mess-with-the-Birds.jpg" 
+    width=25% >
+
+   
     <script>
-        function AdddPara(){
-        //creating element 
-        let newPara = document.createElement("p");
-        newPara.textContent = "This is dynamic paragragh";
+              function AdddPara(){
+              //creating element
+              let newPara = document.createElement("p");
+              newPara.textContent = "This is dynamic paragragh";
 
-        //add Element
-        let spanElemnt = document.getElementById("container");
-        spanElemnt.appendChild(newPara);
-    }
-    </script>
-</body>
+              //add Element
+              let spanElemnt = document.getElementById("container");
+              spanElemnt.appendChild(newPara);
+          }
+
+          function orderList()
+          {
+            let readTxt = document.getElementById("input").value;
+
+            let newElement = document.createElement("li");
+            newElement.textContent = readTxt;
+
+            document.getElementById("taskList")
+            UlElement.appendChild(newElement);
+
+            document.getElementById("input").value = " "
+                        
+          }
+
+          function bigImg(){
+            let image = document.getElementById("img")
+            image.src ="https://kb.rspca.org.au/wp-content/uploads/2023/05/blue-macaw.jpeg" 
+
+          }
+      
+
+     </script>
+  </body>
 </html>
