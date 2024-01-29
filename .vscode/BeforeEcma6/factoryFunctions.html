@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function person(name, age, gender) {
+        return {
+          name: name,
+          age: age,
+          gender: gender,
+          welcome: function () {
+            console.log(`${this.name} ${this.age} ${this.gender}`);
+          },
+        };
+      }
+
+      const person1 = person("john", 20, "male");
+      console.log(person1);
+      person1.welcome();
+
+      const person2 = person("clara", 23, "female");
+      person2.welcome();
+
+      function counter() {
+        let count = 0;
+        return {
+          increment: () => ++count,
+          decrement: () => --count,
+          reset: () => (count = 0),
+        };
+      }
+
+      const counter1 = counter();
+      console.log(counter1.increment());
+      console.log(counter1.increment());
+
+      const counter2 = counter();
+      console.log(counter1.decrement());
+      console.log(counter1.decrement());
+      console.log(counter1.decrement());
+      console.log(counter1.reset());
+
+      //Closure functions
+      function factor(a) {
+        return function (b) {
+          return a * b;
+        };
+      }
+
+      let fun = factor(3);
+      //console.log(fun)
+      for (let i = 0; i < 11; i++) {
+        console.log(fun(i));
+      }
+
+      //closure function example 2
+
+      function calculateDiscount(discountPercent) {
+        let discount = discountPercent / 100;
+        return function (productPrice) {
+          return productPrice * discount;
+        };
+      }
+      let calculatetotalPrice = calculateDiscount(10);
+      console.log(calculatetotalPrice(200));
+      console.log(calculatetotalPrice(1000));
+
+      let calculateTotalPrice2 = calculateDiscount(20);
+      console.log(calculateTotalPrice2(2000));
+
+      //high order functions
+
+      const add = (a, b) => a + b;
+      const sub = (a, b) => a - b;
+      const mul = (a, b) => a * b;
+      const div = (a, b) => a / b;
+
+      //HIGH ORDRE FUNCTION - passing a functio as a parameter
+      //a function is getting another function as parametr is a  High oerder function
+
+      function operation(a, b, fun) {
+        return fun(a, b);
+      }
+
+      console.log(operation(4, 2, add));
+      console.log(operation(4, 2, sub));
+      console.log(operation(4, 2, mul));
+      console.log(operation(4, 2, div));
+
+      //Prototype Chaining
+
+      // Creating a constructor function
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // Adding a method to the Person prototype
+      Person.prototype.sayHello = function () {
+        console.log(
+          "Hello, my name is " +
+            this.name +
+            " and I am " +
+            this.age +
+            " years old."
+        );
+      };
+
+      // Creating an instance of Person
+      let human = new Person("John", 30);
+
+      // Accessing the sayHello method
+      human.sayHello(); // Output: "Hello, my name is John and I am 30 years old."
+
+      // JavaScript will look for the sayHello method in person1 first.
+      // If it doesn't find it there, it will look for it in the Person.prototype.
+      // This is how prototype chaining works in JavaScript.
+
+      //__proto__ eg2
+      //__proto__ used to find its own property or assign a object to another obj or inheritance
+      let obj1 = {
+        name: "john",
+        age: 20,
+        getInfo: function () {
+          console.log(`${this.name} is ${this.age} yrs old`);
+        },
+      };
+      console.log(obj1.__proto__);
+      let obj2 = {
+        name: "Adam",
+      };
+
+      obj2.__proto__ = obj1;
+      console.log(obj2);
+      console.log(obj2.__proto__);
+
+      console.log(obj2.hasOwnProperty("age"));
+      console.log(obj2.hasOwnProperty("name"));
+
+      //CONSTRUCTOR CHAINING  -- we can achieve oops concepts
+
+      //PROTOTYPE is used find its own property or to assign a function to another obj
+
+      function people(name, age, gender, city) {
+        (this.name = name),
+          (this.age = age),
+          (this.gender = gender),
+          (this.city = city);
+      }
+
+      people.prototype.displayPerson = function () {
+        //--> we can include external function by prototye or assign a property
+        console.log(
+          `Hi I am ${this.name} my age is ${this.age} and i am refered as ${this.gender}in  ${this.city}`
+        );
+      };
+
+      let person3 = new people("sam", 23, "male", "chennai");
+      let person4 = new people("sunil", 24, "male", "coimbatore");
+
+      person3.displayPerson();
+      person4.displayPerson();
+
+      //This is the procedure before ecma 6 to create objs and functions
+
+      //after ecma 6 refer file class.js
+      //same procedure to create class and functions as java
+
+    </script>
+  </body>
+</html>

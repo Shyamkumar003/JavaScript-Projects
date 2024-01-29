@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span id="count"> </span>
+
+    <script>
+        let count =0;
+        //1
+        // function interval(){
+        //     console.log(count++);
+        // }
+
+        // setInterval(interval,1000);
+
+        //2
+    //    let intervalId = setInterval(
+    //         ()=>{
+    //         console.log(count++)
+    //         document.getElementById("count").innerHTML=count
+    //     },
+    //     1000)
+
+    //     setTimeout(
+    //         ()=>
+    //         {
+    //         clearInterval(intervalId);
+    //         console.log("Counter Stopped");
+    //     },
+    //     5000)
+
+        //3 Display Time
+
+        //   function displayTime(){
+        //     let date = new Date();
+        //     console.log(`${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds})`);
+        //   }
+
+        //   setInterval(
+        //     ()=>displayTime(),1000);
+ 
+        setInterval(()=>{
+            let date = new Date();
+            console.log(`(${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()})`);
+            // document.getElementById("count").textContent = date;
+
+           document.getElementById("count").textContent = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
+
+
+        },1000)
+
+    </script>
+    
+</body>
+</html>
