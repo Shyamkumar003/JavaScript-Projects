@@ -8,6 +8,7 @@
 <body>
   <h1>Products</h1>
   <ul id="productList"></ul>
+  <span id="display"></span>
 
   <script type="module">
 
@@ -18,10 +19,43 @@
     products.forEach(product => { //forEach doesnt returns anything ,, Map does
       const listItem = document.createElement('li');
 
-      listItem.textContent = `${product.name} - $${product.price}`;
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.className ="Mycheckbox";
+      checkbox.value = product.name; // You can set any value you want for your product
+
+      // Create label for the checkbox
+      const label = document.createElement('label');
+      label.textContent = `${product.name} - $${product.price}`;
+
+      // Append checkbox and label to list item
+      listItem.appendChild(checkbox);
+      listItem.appendChild(label);
+
+     // listItem.textContent = `${product.name} - $${product.price}`;
       
       productList.appendChild(listItem);
     });
+
+    let checkboxes = document.querySelectorAll(".Mycheckbox") 
+    
+    for(let i=0; i<checkboxes.length; i++){
+      checkboxes[i].addEventListener('change', displaySelectedValue)
+    }
+    function displaySelectedValue(){
+      let selectedValue = "";
+      for(let i=0; i<checkboxes.length; i++)
+      {
+        if(checkboxes[i].checked)
+        {
+          selectedValue = selectedValue + `${checkboxes[i].value}<br>`
+        }
+      }
+      document.getElementById("display").innerHTML = selectedValue;
+    }
+
+
+
 
   </script>
 </body>
