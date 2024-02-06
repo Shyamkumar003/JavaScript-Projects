@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveDesign</title>
+    <style>
+     body{
+            width: 100%;
+            height: 100dvh;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+               }
+     .container{
+         text-align: none;
+         letter-spacing: 2px;
+         padding: 50px 70px;
+         border: 2px solid rgb(16, 106, 241);
+         font-size: 25px;
+         width: 150px;
+         position: relative;
+         text-decoration: #fff;
+         overflow: hidden;
+         }
+         .wave{
+         position: absolute;
+         width: 100%;
+         height:100%;
+         top: 125%;
+         left: 0%;
+         background-color: rgb(44, 119, 250);
+         transition: all 1s;
+         z-index: -1;
+       }
+       .wave::before{
+        position: absolute;
+        content: "";
+        width:100%;
+        height: 55px;
+        top: -25%;
+        background-image: url("./wave3.png");
+        animation: wavy 1.5s linear infinite;
+       }
+       @keyframes wavy {
+        0%{
+            background-position-x: 0%;
+        }
+       100%{
+            background-position-x: 125%;
+        }
+    
+    }
+    span:hover .wave{
+        top: 50%;
+    }
+    
+
+    </style>
+</head>
+<body>
+
+    <span class="container">
+        Hello there!
+        <div class="wave"></div>
+    </span>
+    
+</body>
+</html>

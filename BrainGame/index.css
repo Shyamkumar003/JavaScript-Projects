@@ -1,0 +1,43 @@
+:root {
+  --bg-main: #464646;
+  --bg-card: #2d2727;
+  --border-color: #efc745;
+}
+
+body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5rem;
+            height: 100vw;
+            width: 100vw;
+            background-color: var(--bg-main);
+}
+h1{
+  color: #fff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  ;
+  font-size: 4rem;
+}
+
+span{
+  color: var(--border-color);
+}
+
+#card-section{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap : 4rem;
+}
+
+.card{
+  width: 5rem;
+  height: 5rem;
+  padding: 2rem;
+  background-size: contain;
+  border-radius : .6rem;
+  background-color: var(--border-color);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  }
